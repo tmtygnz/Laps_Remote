@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laps Remote", "Laps Remote.csproj", "{882C754A-F72A-4648-8F19-C8DA5B37C3E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{882C754A-F72A-4648-8F19-C8DA5B37C3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882C754A-F72A-4648-8F19-C8DA5B37C3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882C754A-F72A-4648-8F19-C8DA5B37C3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882C754A-F72A-4648-8F19-C8DA5B37C3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E591E1F-018F-44CC-B5F3-1265F6DDB7A7}
+	EndGlobalSection
+EndGlobal
