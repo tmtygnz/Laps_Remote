@@ -94,42 +94,50 @@ namespace Laps_Remote.Screens
 							}
 						});
 					}
-				}
 
-				//Update vital text
-				if (Temperature.InvokeRequired)
-				{
-					Invoke((MethodInvoker) delegate
+					//Update vital text
+					if (Temperature.InvokeRequired)
 					{
-						Temperature.Text = $"Temperature: {patientTemp}";
-					});
-				}
+						Invoke((MethodInvoker)delegate
+						{
+							Temperature.Text = $"Temperature: {patientTemp}";
+						});
+					}
 
-				if (RespRate.InvokeRequired)
-				{
-					Invoke((MethodInvoker) delegate
+					if (RespRate.InvokeRequired)
 					{
-						RespRate.Text = $"Resp Rate: {patienRespRate}";
-					});
-				}
+						Invoke((MethodInvoker)delegate
+						{
+							RespRate.Text = $"Resp Rate: {patienRespRate}";
+						});
+					}
 
-				if (Spo.InvokeRequired)
-				{
-					Invoke((MethodInvoker) delegate {
-						Spo.Text = $"Spo2: {patientSpo}";
-					});
-				}
+					if (Spo.InvokeRequired)
+					{
+						Invoke((MethodInvoker)delegate
+						{
+							Spo.Text = $"Spo2: {patientSpo}";
+						});
+					}
 
-				if (HeartRate.InvokeRequired)
-				{
-					Invoke((MethodInvoker) delegate {
-						HeartRate.Text = $"BPM: {pateintHr}";
-					});
+					if (HeartRate.InvokeRequired)
+					{
+						Invoke((MethodInvoker)delegate
+						{
+							HeartRate.Text = $"BPM: {pateintHr}";
+						});
+					}
 				}
+				
 			}
 		}
 
 		private void VitalSelector_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			vital.Series["Vital"].Points.Clear();
+		}
+
+		private void ClearMonitor_Click(object sender, EventArgs e)
 		{
 			vital.Series["Vital"].Points.Clear();
 		}
