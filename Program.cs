@@ -15,8 +15,8 @@ namespace Laps_Remote
 		[STAThread]
 		static void Main()
 		{
-			logger.init();
-			logger.log("Logger init", DateTime.UtcNow, Level.Trace);
+			Logger.init();
+			Logger.log("Logger init", DateTime.UtcNow, Level.Trace);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Screens.Main());

@@ -9,12 +9,12 @@ using System.Threading;
 
 namespace Laps_Remote.Logging
 {
-	static class logger
+	static class Logger
 	{
 		//Queue of log
 		public static Queue<Message> logQueue;
 		public static StreamWriter logWriter;
-
+		public static Thread logThread;
 		/// <summary>
 		/// Initialize Logger
 		/// </summary>
@@ -34,7 +34,7 @@ namespace Laps_Remote.Logging
 
 			logWriter = File.AppendText(logfilePath);
 
-			Thread logThread = new Thread(() => logLoop());
+			logThread = new Thread(() => logLoop());
 			logThread.Start();
 		}
 		private static void logLoop()
@@ -65,6 +65,7 @@ namespace Laps_Remote.Logging
 		{
 			logQueue.Clear();
 			logWriter.Close();
+			logThread.Abort();
 		}
 	}
 }
