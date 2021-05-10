@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Laps_Remote.Logging;
+using Laps_Remote.Utils;
 
 namespace Laps_Remote
 {
@@ -15,8 +16,9 @@ namespace Laps_Remote
 		[STAThread]
 		static void Main()
 		{
+			Threads.init();
 			Logger.init();
-			Logger.log("Logger init", DateTime.UtcNow, Level.Trace);
+			Logger.log("Init", DateTime.UtcNow, Level.Trace);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Screens.Main());

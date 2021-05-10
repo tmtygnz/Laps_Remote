@@ -8,6 +8,10 @@ namespace Laps_Remote.Vitals
 {
 	class Temp
 	{
+		/// <summary>
+		/// Returns random Temperature for testing
+		/// </summary>
+		/// <returns>Returns Temperature</returns>
 		public static float getRandomTemperature()
 		{
 			Random rnd = new Random();

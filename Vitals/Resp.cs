@@ -8,6 +8,10 @@ namespace Laps_Remote.Vitals
 {
 	class Resp
 	{
+		/// <summary>
+		/// Returns random RespRate for testing
+		/// </summary>
+		/// <returns>Returns RespRate</returns>
 		public static float getRandomResp()
 		{
 			Random rnd = new Random();

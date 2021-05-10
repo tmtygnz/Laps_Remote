@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Laps_Remote.Logging;
 using System.Threading;
 using Laps_Remote.Vitals;
+using Laps_Remote.Utils;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Laps_Remote.Screens
@@ -20,7 +21,7 @@ namespace Laps_Remote.Screens
 		{
 			InitializeComponent();
 		}
-		Thread th;
+
 		private void Main_Load(object sender, EventArgs e)
 		{
 			VitalSelector.SelectedIndex = 0;
@@ -31,14 +32,15 @@ namespace Laps_Remote.Screens
 			vital.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
 			vital.ChartAreas[0].AxisX.ScaleView.Size = 111;
 			
-			th = new Thread(() => VitalChartloop());
-			th.Start();
+			Thread vitalLoopThread = new Thread(() => VitalChartloop());
+			Threads.addThread("vitalLoopThread", vitalLoopThread);
+			vitalLoopThread.Start();
 		}
 
 		private void Main_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			Logger.kill();
-			th.Abort();
+			Threads.killThreads();
 		}
 
 		private void VitalChartloop()
@@ -61,24 +63,24 @@ namespace Laps_Remote.Screens
 						Invoke((MethodInvoker) delegate
 						{
 							//Get value
-							if (VitalSelector.SelectedItem == "Temperature")
+							if (VitalSelector.SelectedIndex == 0)
 							{
-								vital.Series["Vital"].Points.AddXY(Time, patientTemp);
+								vital.Series["Vital"].Points.AddXY(Time, pateintHr);
 							}
 							
-							else if (VitalSelector.SelectedItem == "Respiratory Rate")
+							else if (VitalSelector.SelectedIndex == 1)
 							{
 								vital.Series["Vital"].Points.AddXY(Time, patienRespRate);
 							}
 
-							else if (VitalSelector.SelectedItem == "SPo2")
+							else if (VitalSelector.SelectedIndex == 2)
 							{
 								vital.Series["Vital"].Points.AddXY(Time, patientSpo);
 							}
 
-							else if (VitalSelector.SelectedItem == "Heart Rate")
+							else if (VitalSelector.SelectedIndex == 3)
 							{
-								vital.Series["Vital"].Points.AddXY(Time, pateintHr);
+								vital.Series["Vital"].Points.AddXY(Time, patientTemp);
 							}
 							
 							//Remove 0th point if the points.count is more or equal than 1000

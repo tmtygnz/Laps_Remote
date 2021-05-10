@@ -58,6 +58,7 @@
     <Compile Include="Screens\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Threads.cs" />
     <Compile Include="Vitals\BPM.cs" />
     <Compile Include="Vitals\OSat.cs" />
     <Compile Include="Vitals\Resp.cs" />
@@ -87,5 +88,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

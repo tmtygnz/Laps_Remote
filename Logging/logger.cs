@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
+using Laps_Remote.Utils;
 
 
 namespace Laps_Remote.Logging
 {
 	static class Logger
 	{
-		//Queue of log
 		public static Queue<Message> logQueue;
 		public static StreamWriter logWriter;
-		public static Thread logThread;
+
 		/// <summary>
 		/// Initialize Logger
 		/// </summary>
@@ -33,10 +33,13 @@ namespace Laps_Remote.Logging
 				File.Create(logfilePath);
 
 			logWriter = File.AppendText(logfilePath);
-
-			logThread = new Thread(() => logLoop());
+			
+			//Start thread and add thread to dictionary
+			Thread logThread = new Thread(() => logLoop());
+			Threads.addThread("logThread", logThread);
 			logThread.Start();
 		}
+
 		private static void logLoop()
 		{
 			while (true)
@@ -44,6 +47,12 @@ namespace Laps_Remote.Logging
 					diskWrite(logQueue.Peek());
 		}
 		
+		/// <summary>
+		/// Add a new log message in the queue
+		/// </summary>
+		/// <param name="logMessage">Message</param>
+		/// <param name="time">Time when the message is added</param>
+		/// <param name="level">The level or severity of the message</param>
 		public static void log(string logMessage, DateTime time, Level level)
 		{
 			Message msg = new Message
@@ -55,17 +64,24 @@ namespace Laps_Remote.Logging
 			logQueue.Enqueue(msg);
 		}
 
+		/// <summary>
+		/// Append the log message to log.log
+		/// </summary>
+		/// <param name="message">Message Class</param>
 		public static void diskWrite(Message message)
 		{
 			string logMessage = $"[{message.time}] [{message.level}] {message.message} \n";
 			logWriter.Write(logMessage);
 			logQueue.Dequeue();
 		}
+
+		/// <summary>
+		/// Aborts logThread, clears logQueue, closes logWriter
+		/// </summary>
 		public static void kill()
 		{
 			logQueue.Clear();
 			logWriter.Close();
-			logThread.Abort();
 		}
 	}
 }
