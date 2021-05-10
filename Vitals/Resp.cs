@@ -12,11 +12,10 @@ namespace Laps_Remote.Vitals
 		/// Returns random RespRate for testing
 		/// </summary>
 		/// <returns>Returns RespRate</returns>
-		public static float getRandomResp()
+		public static int getRandomResp()
 		{
 			Random rnd = new Random();
-			double value = (rnd.NextDouble() * (40 - 10) + 10);
-			return (float)value;
+			return rnd.Next(12, 16);
 		}
 	}
 }

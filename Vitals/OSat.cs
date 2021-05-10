@@ -12,11 +12,10 @@ namespace Laps_Remote.Vitals
 		/// Returns random OSat for testing
 		/// </summary>
 		/// <returns>Returns OSat</returns>
-		public static float getRandomOsat()
+		public static int getRandomOsat()
 		{
 			Random rnd = new Random();
-			double value = (rnd.NextDouble() * (100 - 0) + 0);
-			return (float)value;
+			return rnd.Next(10, 50);
 		}
 	}
 }

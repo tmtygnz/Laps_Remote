@@ -12,11 +12,10 @@ namespace Laps_Remote.Vitals
 		/// Returns a random BPM for testing
 		/// </summary>
 		/// <returns>Returns BPM</returns>
-		public static float randomBPM()
+		public static int randomBPM()
 		{
 			Random rnd = new Random();
-			double value = (rnd.NextDouble() * (100 - 0) + 0);
-			return (float)value;
+			return rnd.Next(90, 100);
 		}
 	}
 }

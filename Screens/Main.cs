@@ -52,9 +52,9 @@ namespace Laps_Remote.Screens
 
 				//All data here will be change in to a real one later
 				float patientTemp = Temp.getRandomTemperature();
-				float patienRespRate = Resp.getRandomResp();
-				float patientSpo = OSat.getRandomOsat();
-				float pateintHr = BPM.randomBPM();
+				int patienRespRate = Resp.getRandomResp();
+				int patientSpo = OSat.getRandomOsat();
+				int pateintHr = BPM.randomBPM();
 
 				if (!vitalMonitorToolStripMenuItem.Checked)
 				{
@@ -90,7 +90,7 @@ namespace Laps_Remote.Screens
 							}
 
 							//scroll
-							if (vital.Series["Vital"].Points.Count >= 111)
+							if (vital.Series["Vital"].Points.Count >= 110)
 							{
 								vital.ChartAreas[0].AxisX.ScaleView.Position = vital.Series["Vital"].Points.Count - 111;
 							}
@@ -137,11 +137,13 @@ namespace Laps_Remote.Screens
 		private void VitalSelector_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			vital.Series["Vital"].Points.Clear();
+			vital.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
 		private void ClearMonitor_Click(object sender, EventArgs e)
 		{
 			vital.Series["Vital"].Points.Clear();
+			vital.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 	}
 }
