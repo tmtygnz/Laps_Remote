@@ -72,6 +72,7 @@ namespace Laps_Remote.Logging
 		{
 			string logMessage = $"[{message.time}] [{message.level}] {message.message} \n";
 			logWriter.Write(logMessage);
+			logWriter.Flush();
 			logQueue.Dequeue();
 		}
 
