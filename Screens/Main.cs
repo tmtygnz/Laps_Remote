@@ -17,6 +17,13 @@ namespace Laps_Remote.Screens
 {
 	public partial class Main : Form
 	{
+		bool recording = false;
+		List<Dictionary<string, float>> TempList = new List<Dictionary<string, float>>();
+		List<Dictionary<string, int>> RespRateList = new List<Dictionary<string, int>>();
+		List<Dictionary<string, int>> SpoList = new List<Dictionary<string, int>>();
+		List<Dictionary<string, int>> HrList = new List<Dictionary<string, int>>();
+
+
 		public Main()
 		{
 			InitializeComponent();
@@ -31,8 +38,10 @@ namespace Laps_Remote.Screens
 			vital.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
 			vital.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
 			vital.ChartAreas[0].AxisX.ScaleView.Size = 111;
-			
-			Thread vitalLoopThread = new Thread(() => VitalChartloop());
+
+			saveToolStripMenuItem.Enabled = false;
+
+			Thread vitalLoopThread = new Thread(() => VitalLoop());
 			Threads.addThread("vitalLoopThread", vitalLoopThread);
 			vitalLoopThread.Start();
 		}
@@ -43,7 +52,7 @@ namespace Laps_Remote.Screens
 			Threads.killThreads();
 		}
 
-		private void VitalChartloop()
+		private void VitalLoop()
 		{
 			while (true)
 			{
@@ -54,7 +63,7 @@ namespace Laps_Remote.Screens
 				float patientTemp = Temp.getRandomTemperature();
 				int patienRespRate = Resp.getRandomResp();
 				int patientSpo = OSat.getRandomOsat();
-				int pateintHr = BPM.randomBPM();
+				int patientHr = BPM.randomBPM();
 
 				if (!vitalMonitorToolStripMenuItem.Checked)
 				{
@@ -65,7 +74,7 @@ namespace Laps_Remote.Screens
 							//Get value
 							if (VitalSelector.SelectedIndex == 0)
 							{
-								vital.Series["Vital"].Points.AddXY(Time, pateintHr);
+								vital.Series["Vital"].Points.AddXY(Time, patientHr);
 							}
 							
 							else if (VitalSelector.SelectedIndex == 1)
@@ -84,7 +93,7 @@ namespace Laps_Remote.Screens
 							}
 							
 							//Remove 0th point if the points.count is more or equal than 1000
-							if(vital.Series["Vital"].Points.Count >= 1000)
+							if(vital.Series["Vital"].Points.Count >= 3000)
 							{
 								vital.Series["Vital"].Points.RemoveAt(0);
 							}
@@ -126,9 +135,34 @@ namespace Laps_Remote.Screens
 					{
 						Invoke((MethodInvoker)delegate
 						{
-							HeartRate.Text = $"BPM: {pateintHr}";
+							HeartRate.Text = $"BPM: {patientHr}";
 						});
 					}
+
+					//Record
+					if (recording == true)
+					{
+						//Record values
+
+						//Temperature
+						Dictionary<string, float> Temp = new Dictionary<string, float>();
+						Temp.Add($"{Time}", patientTemp);
+						TempList.Add(Temp);
+
+						//Respiratory Rate, Spo, Hr
+						Dictionary<string, int> RespRate = new Dictionary<string, int>();
+						RespRate.Add($"{Time}", patienRespRate);
+						RespRateList.Add(RespRate);
+
+						Dictionary<string, int> Spo = new Dictionary<string, int>();
+						Spo.Add($"{Time}", patientSpo);
+						SpoList.Add(Spo);
+
+						Dictionary<string, int> Hr = new Dictionary<string, int>();
+						Hr.Add($"{Time}", patientHr);
+						HrList.Add(Hr);
+					}
+
 				}
 				
 			}
@@ -144,6 +178,38 @@ namespace Laps_Remote.Screens
 		{
 			vital.Series["Vital"].Points.Clear();
 			vital.ChartAreas[0].AxisX.ScaleView.Position = 0;
+		}
+
+		private void SaveData_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(vital.Series["Vital"].Points.ToString());
+		}
+
+		private void startToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Thread beep = new Thread(() => Console.Beep(1000, 100));
+			beep.Start();
+
+			recording = true;
+
+			saveToolStripMenuItem.Enabled = true;
+			startToolStripMenuItem.Enabled = false;
+
+			RecordingStatus.ForeColor = Color.Red;
+			RecordingStatus.Text = "Recording";
+		}
+
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			recording = false;
+
+			saveToolStripMenuItem.Enabled = false;
+			startToolStripMenuItem.Enabled = true;
+
+			Save.All(TempList,RespRateList,SpoList,HrList);
+
+			RecordingStatus.ForeColor = Color.ForestGreen;
+			RecordingStatus.Text = "Not Recording";
 		}
 	}
 }

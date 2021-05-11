@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\Laps Remote.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\Laps Remote.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\Laps Remote.csproj",
+        "projectName": "Laps Remote",
+        "projectPath": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\Laps Remote.csproj",
+        "packagesPath": "C:\\Users\\josti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\josti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
