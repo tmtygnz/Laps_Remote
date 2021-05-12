@@ -22,6 +22,7 @@ namespace Laps_Remote.Screens
 		List<Dictionary<string, int>> RespRateList = new List<Dictionary<string, int>>();
 		List<Dictionary<string, int>> SpoList = new List<Dictionary<string, int>>();
 		List<Dictionary<string, int>> HrList = new List<Dictionary<string, int>>();
+		int PointsRecorded = 0;
 
 
 		public Main()
@@ -142,7 +143,7 @@ namespace Laps_Remote.Screens
 					//Record
 					if (recording == true)
 					{
-						//Record values
+						PointsRecorded++;
 
 						//Temperature
 						Dictionary<string, float> Temp = new Dictionary<string, float>();
@@ -161,6 +162,7 @@ namespace Laps_Remote.Screens
 						Dictionary<string, int> Hr = new Dictionary<string, int>();
 						Hr.Add($"{Time}", patientHr);
 						HrList.Add(Hr);
+						RecordingStatus.Text = $"Recording: {PointsRecorded} points";
 					}
 
 				}
@@ -196,20 +198,19 @@ namespace Laps_Remote.Screens
 			startToolStripMenuItem.Enabled = false;
 
 			RecordingStatus.ForeColor = Color.Red;
-			RecordingStatus.Text = "Recording";
 		}
 
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			recording = false;
 
+			RecordingStatus.ForeColor = Color.ForestGreen;
+			RecordingStatus.Text = "Not Recording";
+
 			saveToolStripMenuItem.Enabled = false;
 			startToolStripMenuItem.Enabled = true;
 
 			Save.All(TempList,RespRateList,SpoList,HrList);
-
-			RecordingStatus.ForeColor = Color.ForestGreen;
-			RecordingStatus.Text = "Not Recording";
 		}
 	}
 }

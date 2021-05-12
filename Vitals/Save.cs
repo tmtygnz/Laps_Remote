@@ -26,11 +26,15 @@ namespace Laps_Remote.Vitals
 			dialog.Title = "Save Vitals Recording";
 			dialog.Filter = "Json files (*.json)|*.json|Text files (*.txt)|*.txt";
 
-			if(dialog.ShowDialog() == DialogResult.OK)
+			if (dialog.ShowDialog() == DialogResult.OK)
 			{
 				StreamWriter writer = new StreamWriter(dialog.FileName);
 				writer.Write(jsonOutput);
 				writer.Close();
+			}
+			else
+			{
+				MessageBox.Show("Recording are not saved");
 			}
 		}
 	}
