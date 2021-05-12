@@ -211,6 +211,11 @@ namespace Laps_Remote.Screens
 			startToolStripMenuItem.Enabled = true;
 
 			Save.All(TempList,RespRateList,SpoList,HrList);
+
+			TempList.Clear();
+			RespRateList.Clear();
+			SpoList.Clear();
+			HrList.Clear();
 		}
 	}
 }

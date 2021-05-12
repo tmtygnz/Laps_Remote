@@ -43,14 +43,15 @@ namespace Laps_Remote.Screens
 			this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.vitalMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.ClearMonitor = new System.Windows.Forms.Button();
 			this.vitalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.recordingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.ClearMonitor = new System.Windows.Forms.Button();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.RecordingStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.ClearMonitorHelp = new System.Windows.Forms.HelpProvider();
 			((System.ComponentModel.ISupportInitialize)(this.vital)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
@@ -65,7 +66,7 @@ namespace Laps_Remote.Screens
             "Respiratory Rate",
             "SPo2",
             "Temperature"});
-			this.VitalSelector.Location = new System.Drawing.Point(11, 136);
+			this.VitalSelector.Location = new System.Drawing.Point(12, 140);
 			this.VitalSelector.Name = "VitalSelector";
 			this.VitalSelector.Size = new System.Drawing.Size(121, 23);
 			this.VitalSelector.TabIndex = 4;
@@ -174,6 +175,37 @@ namespace Laps_Remote.Screens
 			this.vitalMonitorToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
 			this.vitalMonitorToolStripMenuItem.Text = "Stop Monitor";
 			// 
+			// vitalsToolStripMenuItem
+			// 
+			this.vitalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recordingToolStripMenuItem});
+			this.vitalsToolStripMenuItem.Name = "vitalsToolStripMenuItem";
+			this.vitalsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+			this.vitalsToolStripMenuItem.Text = "Vitals";
+			// 
+			// recordingToolStripMenuItem
+			// 
+			this.recordingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startToolStripMenuItem,
+            this.saveToolStripMenuItem});
+			this.recordingToolStripMenuItem.Name = "recordingToolStripMenuItem";
+			this.recordingToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+			this.recordingToolStripMenuItem.Text = "Recording";
+			// 
+			// startToolStripMenuItem
+			// 
+			this.startToolStripMenuItem.Name = "startToolStripMenuItem";
+			this.startToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+			this.startToolStripMenuItem.Text = "Start";
+			this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
+			// 
+			// saveToolStripMenuItem
+			// 
+			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+			this.saveToolStripMenuItem.Text = "Stop and Save";
+			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+			// 
 			// comboBox1
 			// 
 			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -190,45 +222,14 @@ namespace Laps_Remote.Screens
 			// 
 			// ClearMonitor
 			// 
-			this.ClearMonitor.Location = new System.Drawing.Point(138, 136);
+			this.ClearMonitor.Location = new System.Drawing.Point(138, 140);
 			this.ClearMonitor.Name = "ClearMonitor";
 			this.ClearMonitor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.ClearMonitor.Size = new System.Drawing.Size(91, 27);
+			this.ClearMonitor.Size = new System.Drawing.Size(91, 23);
 			this.ClearMonitor.TabIndex = 5;
 			this.ClearMonitor.Text = "Clear Monitor";
 			this.ClearMonitor.UseVisualStyleBackColor = true;
 			this.ClearMonitor.Click += new System.EventHandler(this.ClearMonitor_Click);
-			// 
-			// vitalsToolStripMenuItem
-			// 
-			this.vitalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recordingToolStripMenuItem});
-			this.vitalsToolStripMenuItem.Name = "vitalsToolStripMenuItem";
-			this.vitalsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-			this.vitalsToolStripMenuItem.Text = "Vitals";
-			// 
-			// recordingToolStripMenuItem
-			// 
-			this.recordingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.saveToolStripMenuItem});
-			this.recordingToolStripMenuItem.Name = "recordingToolStripMenuItem";
-			this.recordingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.recordingToolStripMenuItem.Text = "Recording";
-			// 
-			// startToolStripMenuItem
-			// 
-			this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-			this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.startToolStripMenuItem.Text = "Start";
-			this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
-			// 
-			// saveToolStripMenuItem
-			// 
-			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.saveToolStripMenuItem.Text = "Stop and Save";
-			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
 			// 
 			// statusStrip1
 			// 
@@ -298,5 +299,6 @@ namespace Laps_Remote.Screens
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel RecordingStatus;
+		private System.Windows.Forms.HelpProvider ClearMonitorHelp;
 	}
 }

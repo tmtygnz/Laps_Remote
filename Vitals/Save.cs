@@ -34,7 +34,7 @@ namespace Laps_Remote.Vitals
 			}
 			else
 			{
-				MessageBox.Show("Recording are not saved");
+				MessageBox.Show("File saving is canceled by the user");
 			}
 		}
 	}
