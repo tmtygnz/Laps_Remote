@@ -28,13 +28,20 @@ namespace Laps_Remote.Vitals
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
-				StreamWriter writer = new StreamWriter(dialog.FileName);
-				writer.Write(jsonOutput);
-				writer.Close();
+				try
+				{
+					StreamWriter writer = new StreamWriter(dialog.FileName);
+					writer.Write(jsonOutput);
+					writer.Close();
+				}
+				catch (Exception e)
+				{
+					MessageBox.Show(e.StackTrace);
+				}
 			}
 			else
 			{
-				MessageBox.Show("File saving is canceled by the user");
+				MessageBox.Show("Operation canceled by the user");
 			}
 		}
 	}

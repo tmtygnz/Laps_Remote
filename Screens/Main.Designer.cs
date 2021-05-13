@@ -29,9 +29,9 @@ namespace Laps_Remote.Screens
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.VitalSelector = new System.Windows.Forms.ComboBox();
 			this.vital = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.HeartRate = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@ namespace Laps_Remote.Screens
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.RecordingStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			this.ClearMonitorHelp = new System.Windows.Forms.HelpProvider();
+			this.AutoScroll = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.vital)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
@@ -76,21 +77,21 @@ namespace Laps_Remote.Screens
 			// 
 			this.vital.BackColor = System.Drawing.SystemColors.Control;
 			this.vital.BorderlineColor = System.Drawing.Color.Transparent;
-			chartArea1.Name = "vitalArea";
-			this.vital.ChartAreas.Add(chartArea1);
-			legend1.BackColor = System.Drawing.Color.White;
-			legend1.Enabled = false;
-			legend1.Name = "Legend1";
-			this.vital.Legends.Add(legend1);
+			chartArea2.Name = "vitalArea";
+			this.vital.ChartAreas.Add(chartArea2);
+			legend2.BackColor = System.Drawing.Color.White;
+			legend2.Enabled = false;
+			legend2.Name = "Legend1";
+			this.vital.Legends.Add(legend2);
 			this.vital.Location = new System.Drawing.Point(-17, 167);
 			this.vital.Name = "vital";
 			this.vital.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-			series1.ChartArea = "vitalArea";
-			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series1.Legend = "Legend1";
-			series1.Name = "Vital";
-			this.vital.Series.Add(series1);
-			this.vital.Size = new System.Drawing.Size(391, 441);
+			series2.ChartArea = "vitalArea";
+			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series2.Legend = "Legend1";
+			series2.Name = "Vital";
+			this.vital.Series.Add(series2);
+			this.vital.Size = new System.Drawing.Size(391, 238);
 			this.vital.TabIndex = 3;
 			this.vital.Text = "vital";
 			// 
@@ -235,7 +236,7 @@ namespace Laps_Remote.Screens
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RecordingStatus});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 592);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 618);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1466, 22);
 			this.statusStrip1.TabIndex = 6;
@@ -248,11 +249,24 @@ namespace Laps_Remote.Screens
 			this.RecordingStatus.Size = new System.Drawing.Size(84, 17);
 			this.RecordingStatus.Text = "Not Recording";
 			// 
+			// AutoScroll
+			// 
+			this.AutoScroll.AutoSize = true;
+			this.AutoScroll.Checked = true;
+			this.AutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.AutoScroll.Location = new System.Drawing.Point(244, 144);
+			this.AutoScroll.Name = "AutoScroll";
+			this.AutoScroll.Size = new System.Drawing.Size(75, 19);
+			this.AutoScroll.TabIndex = 7;
+			this.AutoScroll.Text = "AutoScroll";
+			this.AutoScroll.UseVisualStyleBackColor = true;
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1466, 614);
+			this.ClientSize = new System.Drawing.Size(1466, 640);
+			this.Controls.Add(this.AutoScroll);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.ClearMonitor);
 			this.Controls.Add(this.HeartRate);
@@ -300,5 +314,6 @@ namespace Laps_Remote.Screens
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel RecordingStatus;
 		private System.Windows.Forms.HelpProvider ClearMonitorHelp;
+		private System.Windows.Forms.CheckBox AutoScroll;
 	}
 }

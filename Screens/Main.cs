@@ -100,7 +100,7 @@ namespace Laps_Remote.Screens
 							}
 
 							//scroll
-							if (vital.Series["Vital"].Points.Count >= 110)
+							if (AutoScroll.Checked == true && vital.Series["Vital"].Points.Count >= 111)
 							{
 								vital.ChartAreas[0].AxisX.ScaleView.Position = vital.Series["Vital"].Points.Count - 111;
 							}
