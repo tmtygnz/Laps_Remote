@@ -1,6 +1,8 @@
 ### Laps Remote
 
-![LapsIcon](./img/ico.ico)
+<p align="center">
+  <img width="300" height="300" src="./img/ico.ico">
+</p>
 
 This is a software used with LapsDR to create a contactless health checkup
 
