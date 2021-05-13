@@ -29,12 +29,13 @@ namespace Laps_Remote.Screens
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.VitalSelector_A = new System.Windows.Forms.ComboBox();
 			this.Monitor_A = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.HeartRate = new System.Windows.Forms.Label();
@@ -85,20 +86,20 @@ namespace Laps_Remote.Screens
 			// 
 			this.Monitor_A.BackColor = System.Drawing.SystemColors.Control;
 			this.Monitor_A.BorderlineColor = System.Drawing.Color.Transparent;
-			chartArea5.Name = "vitalArea";
-			this.Monitor_A.ChartAreas.Add(chartArea5);
-			legend5.BackColor = System.Drawing.Color.White;
-			legend5.Enabled = false;
-			legend5.Name = "Legend1";
-			this.Monitor_A.Legends.Add(legend5);
+			chartArea1.Name = "vitalArea";
+			this.Monitor_A.ChartAreas.Add(chartArea1);
+			legend1.BackColor = System.Drawing.Color.White;
+			legend1.Enabled = false;
+			legend1.Name = "Legend1";
+			this.Monitor_A.Legends.Add(legend1);
 			this.Monitor_A.Location = new System.Drawing.Point(-17, 167);
 			this.Monitor_A.Name = "Monitor_A";
 			this.Monitor_A.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-			series5.ChartArea = "vitalArea";
-			series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series5.Legend = "Legend1";
-			series5.Name = "Vital";
-			this.Monitor_A.Series.Add(series5);
+			series1.ChartArea = "vitalArea";
+			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series1.Legend = "Legend1";
+			series1.Name = "Vital";
+			this.Monitor_A.Series.Add(series1);
 			this.Monitor_A.Size = new System.Drawing.Size(391, 253);
 			this.Monitor_A.TabIndex = 3;
 			this.Monitor_A.Text = "vital";
@@ -273,20 +274,20 @@ namespace Laps_Remote.Screens
 			// 
 			this.Monitor_B.BackColor = System.Drawing.SystemColors.Control;
 			this.Monitor_B.BorderlineColor = System.Drawing.Color.Transparent;
-			chartArea6.Name = "vitalArea";
-			this.Monitor_B.ChartAreas.Add(chartArea6);
-			legend6.BackColor = System.Drawing.Color.White;
-			legend6.Enabled = false;
-			legend6.Name = "Legend1";
-			this.Monitor_B.Legends.Add(legend6);
+			chartArea2.Name = "vitalArea";
+			this.Monitor_B.ChartAreas.Add(chartArea2);
+			legend2.BackColor = System.Drawing.Color.White;
+			legend2.Enabled = false;
+			legend2.Name = "Legend1";
+			this.Monitor_B.Legends.Add(legend2);
 			this.Monitor_B.Location = new System.Drawing.Point(-17, 444);
 			this.Monitor_B.Name = "Monitor_B";
 			this.Monitor_B.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-			series6.ChartArea = "vitalArea";
-			series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series6.Legend = "Legend1";
-			series6.Name = "Vital";
-			this.Monitor_B.Series.Add(series6);
+			series2.ChartArea = "vitalArea";
+			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series2.Legend = "Legend1";
+			series2.Name = "Vital";
+			this.Monitor_B.Series.Add(series2);
 			this.Monitor_B.Size = new System.Drawing.Size(391, 253);
 			this.Monitor_B.TabIndex = 8;
 			this.Monitor_B.Text = "vital";
@@ -349,9 +350,10 @@ namespace Laps_Remote.Screens
 			this.Controls.Add(this.Monitor_A);
 			this.Controls.Add(this.Temperature);
 			this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Main";
-			this.Text = "Main";
+			this.Text = "Laps Remote";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
 			((System.ComponentModel.ISupportInitialize)(this.Monitor_A)).EndInit();
