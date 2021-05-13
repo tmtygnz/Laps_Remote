@@ -29,11 +29,14 @@ namespace Laps_Remote.Screens
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			this.VitalSelector = new System.Windows.Forms.ComboBox();
-			this.vital = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			this.VitalSelector_A = new System.Windows.Forms.ComboBox();
+			this.Monitor_A = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.HeartRate = new System.Windows.Forms.Label();
 			this.RespRate = new System.Windows.Forms.Label();
 			this.Spo = new System.Windows.Forms.Label();
@@ -48,52 +51,57 @@ namespace Laps_Remote.Screens
 			this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.ClearMonitor = new System.Windows.Forms.Button();
+			this.ClearMonitor_A = new System.Windows.Forms.Button();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.RecordingStatus = new System.Windows.Forms.ToolStripStatusLabel();
 			this.ClearMonitorHelp = new System.Windows.Forms.HelpProvider();
-			this.AutoScroll = new System.Windows.Forms.CheckBox();
-			((System.ComponentModel.ISupportInitialize)(this.vital)).BeginInit();
+			this.AutoScroll_A = new System.Windows.Forms.CheckBox();
+			this.Monitor_B = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.VitalSelector_B = new System.Windows.Forms.ComboBox();
+			this.ClearMonitor_B = new System.Windows.Forms.Button();
+			this.AutoScroll_B = new System.Windows.Forms.CheckBox();
+			((System.ComponentModel.ISupportInitialize)(this.Monitor_A)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Monitor_B)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// VitalSelector
+			// VitalSelector_A
 			// 
-			this.VitalSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.VitalSelector.FormattingEnabled = true;
-			this.VitalSelector.Items.AddRange(new object[] {
+			this.VitalSelector_A.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.VitalSelector_A.FormattingEnabled = true;
+			this.VitalSelector_A.Items.AddRange(new object[] {
             "Heart Rate",
             "Respiratory Rate",
             "SPo2",
             "Temperature"});
-			this.VitalSelector.Location = new System.Drawing.Point(12, 140);
-			this.VitalSelector.Name = "VitalSelector";
-			this.VitalSelector.Size = new System.Drawing.Size(121, 23);
-			this.VitalSelector.TabIndex = 4;
-			this.VitalSelector.SelectedIndexChanged += new System.EventHandler(this.VitalSelector_SelectedIndexChanged);
+			this.VitalSelector_A.Location = new System.Drawing.Point(12, 140);
+			this.VitalSelector_A.Name = "VitalSelector_A";
+			this.VitalSelector_A.Size = new System.Drawing.Size(121, 23);
+			this.VitalSelector_A.TabIndex = 4;
+			this.VitalSelector_A.SelectedIndexChanged += new System.EventHandler(this.VitalSelector_SelectedIndexChanged);
 			// 
-			// vital
+			// Monitor_A
 			// 
-			this.vital.BackColor = System.Drawing.SystemColors.Control;
-			this.vital.BorderlineColor = System.Drawing.Color.Transparent;
-			chartArea2.Name = "vitalArea";
-			this.vital.ChartAreas.Add(chartArea2);
-			legend2.BackColor = System.Drawing.Color.White;
-			legend2.Enabled = false;
-			legend2.Name = "Legend1";
-			this.vital.Legends.Add(legend2);
-			this.vital.Location = new System.Drawing.Point(-17, 167);
-			this.vital.Name = "vital";
-			this.vital.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-			series2.ChartArea = "vitalArea";
-			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-			series2.Legend = "Legend1";
-			series2.Name = "Vital";
-			this.vital.Series.Add(series2);
-			this.vital.Size = new System.Drawing.Size(391, 238);
-			this.vital.TabIndex = 3;
-			this.vital.Text = "vital";
+			this.Monitor_A.BackColor = System.Drawing.SystemColors.Control;
+			this.Monitor_A.BorderlineColor = System.Drawing.Color.Transparent;
+			chartArea5.Name = "vitalArea";
+			this.Monitor_A.ChartAreas.Add(chartArea5);
+			legend5.BackColor = System.Drawing.Color.White;
+			legend5.Enabled = false;
+			legend5.Name = "Legend1";
+			this.Monitor_A.Legends.Add(legend5);
+			this.Monitor_A.Location = new System.Drawing.Point(-17, 167);
+			this.Monitor_A.Name = "Monitor_A";
+			this.Monitor_A.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+			series5.ChartArea = "vitalArea";
+			series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series5.Legend = "Legend1";
+			series5.Name = "Vital";
+			this.Monitor_A.Series.Add(series5);
+			this.Monitor_A.Size = new System.Drawing.Size(391, 253);
+			this.Monitor_A.TabIndex = 3;
+			this.Monitor_A.Text = "vital";
 			// 
 			// HeartRate
 			// 
@@ -221,22 +229,22 @@ namespace Laps_Remote.Screens
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 4;
 			// 
-			// ClearMonitor
+			// ClearMonitor_A
 			// 
-			this.ClearMonitor.Location = new System.Drawing.Point(138, 140);
-			this.ClearMonitor.Name = "ClearMonitor";
-			this.ClearMonitor.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.ClearMonitor.Size = new System.Drawing.Size(91, 23);
-			this.ClearMonitor.TabIndex = 5;
-			this.ClearMonitor.Text = "Clear Monitor";
-			this.ClearMonitor.UseVisualStyleBackColor = true;
-			this.ClearMonitor.Click += new System.EventHandler(this.ClearMonitor_Click);
+			this.ClearMonitor_A.Location = new System.Drawing.Point(138, 140);
+			this.ClearMonitor_A.Name = "ClearMonitor_A";
+			this.ClearMonitor_A.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.ClearMonitor_A.Size = new System.Drawing.Size(91, 23);
+			this.ClearMonitor_A.TabIndex = 5;
+			this.ClearMonitor_A.Text = "Clear Monitor";
+			this.ClearMonitor_A.UseVisualStyleBackColor = true;
+			this.ClearMonitor_A.Click += new System.EventHandler(this.ClearMonitor_Click);
 			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RecordingStatus});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 618);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 700);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1466, 22);
 			this.statusStrip1.TabIndex = 6;
@@ -249,32 +257,96 @@ namespace Laps_Remote.Screens
 			this.RecordingStatus.Size = new System.Drawing.Size(84, 17);
 			this.RecordingStatus.Text = "Not Recording";
 			// 
-			// AutoScroll
+			// AutoScroll_A
 			// 
-			this.AutoScroll.AutoSize = true;
-			this.AutoScroll.Checked = true;
-			this.AutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.AutoScroll.Location = new System.Drawing.Point(244, 144);
-			this.AutoScroll.Name = "AutoScroll";
-			this.AutoScroll.Size = new System.Drawing.Size(75, 19);
-			this.AutoScroll.TabIndex = 7;
-			this.AutoScroll.Text = "AutoScroll";
-			this.AutoScroll.UseVisualStyleBackColor = true;
+			this.AutoScroll_A.AutoSize = true;
+			this.AutoScroll_A.Checked = true;
+			this.AutoScroll_A.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.AutoScroll_A.Location = new System.Drawing.Point(244, 144);
+			this.AutoScroll_A.Name = "AutoScroll_A";
+			this.AutoScroll_A.Size = new System.Drawing.Size(75, 19);
+			this.AutoScroll_A.TabIndex = 7;
+			this.AutoScroll_A.Text = "AutoScroll";
+			this.AutoScroll_A.UseVisualStyleBackColor = true;
+			// 
+			// Monitor_B
+			// 
+			this.Monitor_B.BackColor = System.Drawing.SystemColors.Control;
+			this.Monitor_B.BorderlineColor = System.Drawing.Color.Transparent;
+			chartArea6.Name = "vitalArea";
+			this.Monitor_B.ChartAreas.Add(chartArea6);
+			legend6.BackColor = System.Drawing.Color.White;
+			legend6.Enabled = false;
+			legend6.Name = "Legend1";
+			this.Monitor_B.Legends.Add(legend6);
+			this.Monitor_B.Location = new System.Drawing.Point(-17, 444);
+			this.Monitor_B.Name = "Monitor_B";
+			this.Monitor_B.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+			series6.ChartArea = "vitalArea";
+			series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series6.Legend = "Legend1";
+			series6.Name = "Vital";
+			this.Monitor_B.Series.Add(series6);
+			this.Monitor_B.Size = new System.Drawing.Size(391, 253);
+			this.Monitor_B.TabIndex = 8;
+			this.Monitor_B.Text = "vital";
+			// 
+			// VitalSelector_B
+			// 
+			this.VitalSelector_B.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.VitalSelector_B.FormattingEnabled = true;
+			this.VitalSelector_B.Items.AddRange(new object[] {
+            "Heart Rate",
+            "Respiratory Rate",
+            "SPo2",
+            "Temperature"});
+			this.VitalSelector_B.Location = new System.Drawing.Point(11, 426);
+			this.VitalSelector_B.Name = "VitalSelector_B";
+			this.VitalSelector_B.Size = new System.Drawing.Size(121, 23);
+			this.VitalSelector_B.TabIndex = 9;
+			this.VitalSelector_B.SelectedIndexChanged += new System.EventHandler(this.VitalSelector_B_SelectedIndexChanged);
+			// 
+			// ClearMonitor_B
+			// 
+			this.ClearMonitor_B.Location = new System.Drawing.Point(138, 426);
+			this.ClearMonitor_B.Name = "ClearMonitor_B";
+			this.ClearMonitor_B.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.ClearMonitor_B.Size = new System.Drawing.Size(91, 23);
+			this.ClearMonitor_B.TabIndex = 10;
+			this.ClearMonitor_B.Text = "Clear Monitor";
+			this.ClearMonitor_B.UseVisualStyleBackColor = true;
+			this.ClearMonitor_B.Click += new System.EventHandler(this.ClearMonitor_B_Click);
+			// 
+			// AutoScroll_B
+			// 
+			this.AutoScroll_B.AutoSize = true;
+			this.AutoScroll_B.Checked = true;
+			this.AutoScroll_B.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.AutoScroll_B.Location = new System.Drawing.Point(241, 430);
+			this.AutoScroll_B.Name = "AutoScroll_B";
+			this.AutoScroll_B.Size = new System.Drawing.Size(75, 19);
+			this.AutoScroll_B.TabIndex = 11;
+			this.AutoScroll_B.Text = "AutoScroll";
+			this.AutoScroll_B.UseVisualStyleBackColor = true;
 			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1466, 640);
-			this.Controls.Add(this.AutoScroll);
+			this.ClientSize = new System.Drawing.Size(1466, 722);
+			this.Controls.Add(this.AutoScroll_B);
+			this.Controls.Add(this.ClearMonitor_B);
+			this.Controls.Add(this.VitalSelector_B);
+			this.Controls.Add(this.Monitor_B);
+			this.Controls.Add(this.AutoScroll_A);
 			this.Controls.Add(this.statusStrip1);
-			this.Controls.Add(this.ClearMonitor);
+			this.Controls.Add(this.ClearMonitor_A);
 			this.Controls.Add(this.HeartRate);
-			this.Controls.Add(this.VitalSelector);
+			this.Controls.Add(this.VitalSelector_A);
 			this.Controls.Add(this.Spo);
 			this.Controls.Add(this.RespRate);
 			this.Controls.Add(this.menuStrip1);
-			this.Controls.Add(this.vital);
+			this.Controls.Add(this.Monitor_A);
 			this.Controls.Add(this.Temperature);
 			this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.MainMenuStrip = this.menuStrip1;
@@ -282,11 +354,12 @@ namespace Laps_Remote.Screens
 			this.Text = "Main";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.Load += new System.EventHandler(this.Main_Load);
-			((System.ComponentModel.ISupportInitialize)(this.vital)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Monitor_A)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.Monitor_B)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -296,14 +369,14 @@ namespace Laps_Remote.Screens
 
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.DataVisualization.Charting.Chart vital;
+		private System.Windows.Forms.DataVisualization.Charting.Chart Monitor_A;
 		private System.Windows.Forms.Label HeartRate;
 		private System.Windows.Forms.Label RespRate;
 		private System.Windows.Forms.Label Spo;
 		private System.Windows.Forms.Label Temperature;
-		private System.Windows.Forms.ComboBox VitalSelector;
+		private System.Windows.Forms.ComboBox VitalSelector_A;
 		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Button ClearMonitor;
+		private System.Windows.Forms.Button ClearMonitor_A;
 		private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem vitalMonitorToolStripMenuItem;
@@ -314,6 +387,10 @@ namespace Laps_Remote.Screens
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel RecordingStatus;
 		private System.Windows.Forms.HelpProvider ClearMonitorHelp;
-		private System.Windows.Forms.CheckBox AutoScroll;
+		private System.Windows.Forms.CheckBox AutoScroll_A;
+		private System.Windows.Forms.DataVisualization.Charting.Chart Monitor_B;
+		private System.Windows.Forms.ComboBox VitalSelector_B;
+		private System.Windows.Forms.Button ClearMonitor_B;
+		private System.Windows.Forms.CheckBox AutoScroll_B;
 	}
 }
