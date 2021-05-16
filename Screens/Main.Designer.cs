@@ -51,6 +51,7 @@ namespace Laps_Remote.Screens
 			this.recordingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.readHIstoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.ClearMonitor_A = new System.Windows.Forms.Button();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -188,7 +189,8 @@ namespace Laps_Remote.Screens
 			// vitalsToolStripMenuItem
 			// 
 			this.vitalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recordingToolStripMenuItem});
+            this.recordingToolStripMenuItem,
+            this.readHIstoryToolStripMenuItem});
 			this.vitalsToolStripMenuItem.Name = "vitalsToolStripMenuItem";
 			this.vitalsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
 			this.vitalsToolStripMenuItem.Text = "Vitals";
@@ -199,7 +201,7 @@ namespace Laps_Remote.Screens
             this.startToolStripMenuItem,
             this.saveToolStripMenuItem});
 			this.recordingToolStripMenuItem.Name = "recordingToolStripMenuItem";
-			this.recordingToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+			this.recordingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.recordingToolStripMenuItem.Text = "Recording";
 			// 
 			// startToolStripMenuItem
@@ -215,6 +217,13 @@ namespace Laps_Remote.Screens
 			this.saveToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
 			this.saveToolStripMenuItem.Text = "Stop and Save";
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+			// 
+			// readHIstoryToolStripMenuItem
+			// 
+			this.readHIstoryToolStripMenuItem.Name = "readHIstoryToolStripMenuItem";
+			this.readHIstoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.readHIstoryToolStripMenuItem.Text = "Read HIstory";
+			this.readHIstoryToolStripMenuItem.Click += new System.EventHandler(this.readHIstoryToolStripMenuItem_Click);
 			// 
 			// comboBox1
 			// 
@@ -394,5 +403,6 @@ namespace Laps_Remote.Screens
 		private System.Windows.Forms.ComboBox VitalSelector_B;
 		private System.Windows.Forms.Button ClearMonitor_B;
 		private System.Windows.Forms.CheckBox AutoScroll_B;
+		private System.Windows.Forms.ToolStripMenuItem readHIstoryToolStripMenuItem;
 	}
 }

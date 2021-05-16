@@ -10,3 +10,4 @@ C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\D
 C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Debug\Laps Remote.pdb
 C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\bin\Debug\Newtonsoft.Json.dll
 C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Debug\Laps Remote.csproj.CopyComplete
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Debug\Laps_Remote.Screens.Reader.resources

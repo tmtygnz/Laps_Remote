@@ -58,6 +58,12 @@
     <Compile Include="Screens\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Reader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Reader.Designer.cs">
+      <DependentUpon>Reader.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Threads.cs" />
     <Compile Include="Vitals\BPM.cs" />
     <Compile Include="Vitals\OSat.cs" />
@@ -76,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="Screens\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Reader.resx">
+      <DependentUpon>Reader.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -18,6 +18,7 @@ namespace Laps_Remote.Screens
 	public partial class Main : Form
 	{
 		bool recording = false;
+		List<Dictionary<string, string>> TimeList = new List<Dictionary<string, string>>();
 		List<Dictionary<string, float>> TempList = new List<Dictionary<string, float>>();
 		List<Dictionary<string, int>> RespRateList = new List<Dictionary<string, int>>();
 		List<Dictionary<string, int>> SpoList = new List<Dictionary<string, int>>();
@@ -191,22 +192,27 @@ namespace Laps_Remote.Screens
 						PointsRecorded++;
 
 						//Temperature
-						Dictionary<string, float> Temp = new Dictionary<string, float>();
-						Temp.Add($"{Time}", patientTemp);
-						TempList.Add(Temp);
+						Dictionary<string, float> TempGet = new Dictionary<string, float>();
+						TempGet.Add(Time, patientTemp);
+						TempList.Add(TempGet);
 
-						//Respiratory Rate, Spo, Hr
-						Dictionary<string, int> RespRate = new Dictionary<string, int>();
-						RespRate.Add($"{Time}", patienRespRate);
-						RespRateList.Add(RespRate);
+						//Respiratory Rate, Spo, Hr, time
+						Dictionary<string, int> RespRateGet = new Dictionary<string, int>();
+						RespRateGet.Add(Time, patienRespRate);
+						RespRateList.Add(RespRateGet);
 
-						Dictionary<string, int> Spo = new Dictionary<string, int>();
-						Spo.Add($"{Time}", patientSpo);
-						SpoList.Add(Spo);
+						Dictionary<string, int> SpoGet = new Dictionary<string, int>();
+						SpoGet.Add(Time, patientSpo);
+						SpoList.Add(SpoGet);
 
-						Dictionary<string, int> Hr = new Dictionary<string, int>();
-						Hr.Add($"{Time}", patientHr);
-						HrList.Add(Hr);
+						Dictionary<string, int> HrGet = new Dictionary<string, int>();
+						HrGet.Add(Time, patientHr);
+						HrList.Add(HrGet);
+
+						Dictionary<string, string> TimeGet = new Dictionary<string, string>();
+						TimeGet.Add("value", Time);
+						TimeList.Add(TimeGet);
+
 						RecordingStatus.Text = $"Recording: {PointsRecorded} points";
 					}
 
@@ -267,12 +273,17 @@ namespace Laps_Remote.Screens
 			saveToolStripMenuItem.Enabled = false;
 			startToolStripMenuItem.Enabled = true;
 
-			Save.All(TempList,RespRateList,SpoList,HrList);
+			Save.History(TimeList,TempList,RespRateList,SpoList,HrList);
 
 			TempList.Clear();
 			RespRateList.Clear();
 			SpoList.Clear();
 			HrList.Clear();
+		}
+
+		private void readHIstoryToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }
