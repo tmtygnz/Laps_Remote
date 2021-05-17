@@ -1,0 +1,16 @@
+﻿language: csharp
+solution: Laps Remote.sln
+
+mono:
+    - latest
+
+install:
+    - nuget restore Laps Reomte.sln
+    - nuget install Newtonsoft.Json -Version 3.9.0
+
+jobs:
+    include:
+        - dotnet: 5.0.202
+
+script:
+    - msbuild Laps Remote.sln /p:Configuration=Release
