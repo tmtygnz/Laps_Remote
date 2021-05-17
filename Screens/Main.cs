@@ -276,6 +276,7 @@ namespace Laps_Remote.Screens
 
 			Save.History(TimeList,TempList,RespRateList,SpoList,HrList);
 
+			TimeList.Clear();
 			TempList.Clear();
 			RespRateList.Clear();
 			SpoList.Clear();
@@ -284,8 +285,7 @@ namespace Laps_Remote.Screens
 
 		private void readHIstoryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Reader reader = new Reader();
-			reader.Show();
+			
 		}
 	}
 }
