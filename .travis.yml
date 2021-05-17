@@ -1,4 +1,5 @@
 ﻿language: csharp
+os: windows
 sudo: required
 mono: none 
 solution: "./Laps Remote.sln"
