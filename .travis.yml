@@ -1,12 +1,12 @@
 ﻿language: csharp
 sudo: required
 mono: none 
-solution: ./Laps Remote.sln
+solution: "./Laps Remote.sln"
 dotnet: 5.0.202
 
 install:
-- dotnet restore ./Laps Remote.sln
+- dotnet restore "./Laps Remote.sln"
 
 script:
- - dotnet build ./Laps Remote.sln
+ - dotnet build "./Laps Remote.sln"
  - dotnet test 
