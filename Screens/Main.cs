@@ -11,6 +11,7 @@ using Laps_Remote.Logging;
 using System.Threading;
 using Laps_Remote.Vitals;
 using Laps_Remote.Utils;
+using Laps_Remote.Screens;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Laps_Remote.Screens
@@ -283,7 +284,8 @@ namespace Laps_Remote.Screens
 
 		private void readHIstoryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			
+			Reader reader = new Reader();
+			reader.Show();
 		}
 	}
 }
