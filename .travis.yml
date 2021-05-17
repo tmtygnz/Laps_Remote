@@ -2,9 +2,6 @@
 solution: Laps Remote.sln
 os: windows
 
-install:
-    - nuget install Newtonsoft.Json -Version 3.9.0
-
 jobs:
     include:
         - dotnet: 5.0.202
