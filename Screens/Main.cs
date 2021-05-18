@@ -285,7 +285,8 @@ namespace Laps_Remote.Screens
 
 		private void readHIstoryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			
+			Reader reader = new Reader();
+			reader.Show();
 		}
 	}
 }
