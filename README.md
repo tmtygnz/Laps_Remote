@@ -1,4 +1,4 @@
-### Laps Remote [Under Development]
+﻿### Laps Remote [Under Development]
 ---
 <p align="center">
   <img width="300" height="300" src="./img/ico.ico">
@@ -14,5 +14,5 @@ To get started use `git clone https://github.com/jostimian/Laps_Remote` to clone
 
 ### TODO
 ---
-- History Reader
+- History Reader [Currently Working On It 😀]
 - Audio and Video Feed
