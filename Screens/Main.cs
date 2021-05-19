@@ -66,7 +66,7 @@ namespace Laps_Remote.Screens
 			while (true)
 			{
 				Thread.Sleep(100);
-				string Time = $"{DateTime.Now.Hour}:{DateTime.Now.Second}.{DateTime.Now.Millisecond}";
+				string Time = $"{DateTime.Now.Hour}:{DateTime.Now.Second}";
 
 				//All data here will be change in to a real one later
 				float patientTemp = Temp.getRandomTemperature();
