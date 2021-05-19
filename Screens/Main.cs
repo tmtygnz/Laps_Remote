@@ -26,7 +26,6 @@ namespace Laps_Remote.Screens
 		List<Dictionary<string, int>> HrList = new List<Dictionary<string, int>>();
 		int PointsRecorded = 0;
 
-
 		public Main()
 		{
 			InitializeComponent();
@@ -34,20 +33,20 @@ namespace Laps_Remote.Screens
 
 		private void Main_Load(object sender, EventArgs e)
 		{
-			VitalSelector_A.SelectedIndex = 0;
-			VitalSelector_B.SelectedIndex = 0;
+			VitalSelectorAMain.SelectedIndex = 0;
+			VitalSelectorBMain.SelectedIndex = 0;
 
-			Monitor_A.ChartAreas[0].AxisX.Maximum = double.NaN;
-			Monitor_A.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
-			Monitor_A.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
-			Monitor_A.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-			Monitor_A.ChartAreas[0].AxisX.ScaleView.Size = 111;
+			MonitorAMain.ChartAreas[0].AxisX.Maximum = double.NaN;
+			MonitorAMain.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
+			MonitorAMain.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Size = 111;
 
-			Monitor_B.ChartAreas[0].AxisX.Maximum = double.NaN;
-			Monitor_B.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
-			Monitor_B.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
-			Monitor_B.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-			Monitor_B.ChartAreas[0].AxisX.ScaleView.Size = 111;
+			MonitorBMain.ChartAreas[0].AxisX.Maximum = double.NaN;
+			MonitorBMain.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
+			MonitorBMain.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.SmallScroll;
+			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Size = 111;
 
 			saveToolStripMenuItem.Enabled = false;
 
@@ -77,79 +76,79 @@ namespace Laps_Remote.Screens
 
 				if (!vitalMonitorToolStripMenuItem.Checked)
 				{
-					if (Monitor_A.InvokeRequired)
+					if (MonitorAMain.InvokeRequired)
 					{
 						Invoke((MethodInvoker) delegate
 						{
 							//Get value
-							if (VitalSelector_A.SelectedIndex == 0)
+							if (VitalSelectorAMain.SelectedIndex == 0)
 							{
-								Monitor_A.Series["Vital"].Points.AddXY(Time, patientHr);
+								MonitorAMain.Series["Vital"].Points.AddXY(Time, patientHr);
 							}
 							
-							else if (VitalSelector_A.SelectedIndex == 1)
+							else if (VitalSelectorAMain.SelectedIndex == 1)
 							{
-								Monitor_A.Series["Vital"].Points.AddXY(Time, patienRespRate);
+								MonitorAMain.Series["Vital"].Points.AddXY(Time, patienRespRate);
 							}
 
-							else if (VitalSelector_A.SelectedIndex == 2)
+							else if (VitalSelectorAMain.SelectedIndex == 2)
 							{
-								Monitor_A.Series["Vital"].Points.AddXY(Time, patientSpo);
+								MonitorAMain.Series["Vital"].Points.AddXY(Time, patientSpo);
 							}
 
-							else if (VitalSelector_A.SelectedIndex == 3)
+							else if (VitalSelectorAMain.SelectedIndex == 3)
 							{
-								Monitor_A.Series["Vital"].Points.AddXY(Time, patientTemp);
+								MonitorAMain.Series["Vital"].Points.AddXY(Time, patientTemp);
 							}
 							
 							//Remove 0th point if the points.count is more or equal than 3000
-							if(Monitor_A.Series["Vital"].Points.Count >= 3000)
+							if(MonitorAMain.Series["Vital"].Points.Count >= 3000)
 							{
-								Monitor_A.Series["Vital"].Points.RemoveAt(0);
+								MonitorAMain.Series["Vital"].Points.RemoveAt(0);
 							}
 
 							//scroll
-							if (AutoScroll_A.Checked == true && Monitor_A.Series["Vital"].Points.Count >= 111)
+							if (AutoScrollAMain.Checked == true && MonitorAMain.Series["Vital"].Points.Count >= 111)
 							{
-								Monitor_A.ChartAreas["vitalArea"].AxisX.ScaleView.Position = Monitor_A.Series["Vital"].Points.Count - 111;
+								MonitorAMain.ChartAreas["vitalArea"].AxisX.ScaleView.Position = MonitorAMain.Series["Vital"].Points.Count - 111;
 							}
 						});
 					}
 
-					if (Monitor_B.InvokeRequired)
+					if (MonitorBMain.InvokeRequired)
 					{
 						Invoke((MethodInvoker)delegate 
 						{
 							//Get Value
-							if (VitalSelector_B.SelectedIndex == 0)
+							if (VitalSelectorBMain.SelectedIndex == 0)
 							{
-								Monitor_B.Series["Vital"].Points.AddXY(Time, patientHr);
+								MonitorBMain.Series["Vital"].Points.AddXY(Time, patientHr);
 							}
 
-							else if (VitalSelector_B.SelectedIndex == 1)
+							else if (VitalSelectorBMain.SelectedIndex == 1)
 							{
-								Monitor_B.Series["Vital"].Points.AddXY(Time, patienRespRate);
+								MonitorBMain.Series["Vital"].Points.AddXY(Time, patienRespRate);
 							}
 
-							else if (VitalSelector_B.SelectedIndex == 2)
+							else if (VitalSelectorBMain.SelectedIndex == 2)
 							{
-								Monitor_B.Series["Vital"].Points.AddXY(Time, patientSpo);
+								MonitorBMain.Series["Vital"].Points.AddXY(Time, patientSpo);
 							}
 
-							else if(VitalSelector_B.SelectedIndex == 3)
+							else if(VitalSelectorBMain.SelectedIndex == 3)
 							{
-								Monitor_B.Series["Vital"].Points.AddXY(Time, patientTemp);
+								MonitorBMain.Series["Vital"].Points.AddXY(Time, patientTemp);
 							}
 
 							//Remove 0th point if point.count is more than 3000
-							if (Monitor_B.Series["Vital"].Points.Count >= 3000)
+							if (MonitorBMain.Series["Vital"].Points.Count >= 3000)
 							{
-								Monitor_B.Series["Vital"].Points.RemoveAt(0);
+								MonitorBMain.Series["Vital"].Points.RemoveAt(0);
 							}
 
-							if (AutoScroll_B.Checked == true && Monitor_B.Series["Vital"].Points.Count >= 111)
+							if (AutoScrollBMain.Checked == true && MonitorBMain.Series["Vital"].Points.Count >= 111)
 							{
-								Monitor_B.ChartAreas["vitalArea"].AxisX.ScaleView.Position = Monitor_B.Series["Vital"].Points.Count - 111;
+								MonitorBMain.ChartAreas["vitalArea"].AxisX.ScaleView.Position = MonitorBMain.Series["Vital"].Points.Count - 111;
 							}
 						});
 					}
@@ -194,20 +193,20 @@ namespace Laps_Remote.Screens
 
 						//Temperature
 						Dictionary<string, float> TempGet = new Dictionary<string, float>();
-						TempGet.Add(Time, patientTemp);
+						TempGet.Add("value", patientTemp);
 						TempList.Add(TempGet);
 
 						//Respiratory Rate, Spo, Hr, time
 						Dictionary<string, int> RespRateGet = new Dictionary<string, int>();
-						RespRateGet.Add(Time, patienRespRate);
+						RespRateGet.Add("value", patienRespRate);
 						RespRateList.Add(RespRateGet);
 
 						Dictionary<string, int> SpoGet = new Dictionary<string, int>();
-						SpoGet.Add(Time, patientSpo);
+						SpoGet.Add("value", patientSpo);
 						SpoList.Add(SpoGet);
 
 						Dictionary<string, int> HrGet = new Dictionary<string, int>();
-						HrGet.Add(Time, patientHr);
+						HrGet.Add("value", patientHr);
 						HrList.Add(HrGet);
 
 						Dictionary<string, string> TimeGet = new Dictionary<string, string>();
@@ -224,31 +223,31 @@ namespace Laps_Remote.Screens
 
 		private void VitalSelector_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			Monitor_A.Series["Vital"].Points.Clear();
-			Monitor_A.ChartAreas[0].AxisX.ScaleView.Position = 0;
+			MonitorAMain.Series["Vital"].Points.Clear();
+			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
 		private void VitalSelector_B_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			Monitor_B.Series["Vital"].Points.Clear();
-			Monitor_B.ChartAreas[0].AxisX.ScaleView.Position = 0;
+			MonitorBMain.Series["Vital"].Points.Clear();
+			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
 		private void ClearMonitor_Click(object sender, EventArgs e)
 		{
-			Monitor_A.Series["Vital"].Points.Clear();
-			Monitor_A.ChartAreas[0].AxisX.ScaleView.Position = 0;
+			MonitorAMain.Series["Vital"].Points.Clear();
+			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
 		private void ClearMonitor_B_Click(object sender, EventArgs e)
 		{
-			Monitor_B.Series["Vital"].Points.Clear();
-			Monitor_B.ChartAreas[0].AxisX.ScaleView.Position = 0;
+			MonitorBMain.Series["Vital"].Points.Clear();
+			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
 		private void SaveData_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(Monitor_A.Series["Vital"].Points.ToString());
+			MessageBox.Show(MonitorAMain.Series["Vital"].Points.ToString());
 		}
 
 		private void startToolStripMenuItem_Click(object sender, EventArgs e)
