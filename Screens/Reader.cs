@@ -19,9 +19,12 @@ namespace Laps_Remote.Screens
 	{
 		static string filePath = "";
 		dynamic history;
-		List<Dictionary<string, string>> Time = new List<Dictionary<string, string>>();
-		List<Dictionary<string, int>> RespRate = new List<Dictionary<string, int>>();
-		
+		List<string> TimeList = new List<string>();
+		List<float> TempList = new List<float>();
+		List<int> RespRateList = new List<int>();
+		List<int> SpoList = new List<int>();
+		List<int> HrList = new List<int>();
+
 		public Reader()
 		{
 			InitializeComponent();
@@ -52,9 +55,42 @@ namespace Laps_Remote.Screens
 
 			StreamReader reader = new StreamReader(filePath);
 			history = JsonConvert.DeserializeObject<dynamic>(reader.ReadToEnd());
-			for (int i = 0; i != history["Time"].Count; i++)
+
+			//Load Values
+			for(int i = 0; i != history["Time"].Count; i++)
 			{
-				MonitorAReader.Series["Vital"].Points.AddXY(history["Time"][i]["value"].ToString(), (float)history["Temp"][i]["value"]);
+				TimeList.Add(history["Time"][i]["value"].ToString());
+				TempList.Add((float)history["Temp"][i]["value"]);
+				RespRateList.Add((int)history["RespRate"][i]["value"]);
+				SpoList.Add((int)history["Spo"][i]["value"]);
+				HrList.Add((int)history["Hr"][i]["value"]);
+			}
+		}
+
+		private void VitalSelectorAReader_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			MonitorAReader.Series["Vital"].Points.Clear();
+			if (VitalSelectorAReader.SelectedIndex == 0)
+			{
+				for (int i = 0; i != TimeList.Count; i++)
+				{
+					MonitorAReader.Series["Vital"].Points.AddXY(TimeList[i], HrList[i]);
+				}
+			}
+			else if (VitalSelectorAReader.SelectedIndex == 1)
+			{
+				for (int i = 0; i != TimeList.Count; i++)
+				{
+					MonitorAReader.Series["Vital"].Points.AddXY(TimeList[i], RespRateList[i]);
+				}
+			}
+
+			else if(VitalSelectorAReader.SelectedIndex == 2)
+			{
+				for (int i = 0; i != TimeList.Count; i++)
+				{
+					MonitorAReader.Series["Vital"].Points.AddXY(TimeList[i], SpoList[i]);
+				}
 			}
 		}
 	}

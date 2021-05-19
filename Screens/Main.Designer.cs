@@ -97,7 +97,7 @@ namespace Laps_Remote.Screens
 			this.MonitorAMain.Name = "MonitorAMain";
 			this.MonitorAMain.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
 			series1.ChartArea = "vitalArea";
-			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
 			series1.Legend = "Legend1";
 			series1.Name = "Vital";
 			this.MonitorAMain.Series.Add(series1);
@@ -293,7 +293,7 @@ namespace Laps_Remote.Screens
 			this.MonitorBMain.Name = "MonitorBMain";
 			this.MonitorBMain.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
 			series2.ChartArea = "vitalArea";
-			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
 			series2.Legend = "Legend1";
 			series2.Name = "Vital";
 			this.MonitorBMain.Series.Add(series2);

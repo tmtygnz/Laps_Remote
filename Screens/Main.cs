@@ -66,7 +66,7 @@ namespace Laps_Remote.Screens
 			while (true)
 			{
 				Thread.Sleep(100);
-				string Time = $"{DateTime.Now.Hour}:{DateTime.Now.Second}.{DateTime.Now.Second}";
+				string Time = $"{DateTime.Now.Hour}:{DateTime.Now.Second}.{DateTime.Now.Millisecond}";
 
 				//All data here will be change in to a real one later
 				float patientTemp = Temp.getRandomTemperature();
@@ -215,7 +215,6 @@ namespace Laps_Remote.Screens
 
 						RecordingStatus.Text = $"Recording: {PointsRecorded} points";
 					}
-
 				}
 				
 			}

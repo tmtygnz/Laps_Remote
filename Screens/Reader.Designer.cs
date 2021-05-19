@@ -33,11 +33,15 @@ namespace Laps_Remote.Screens
 			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
 			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			this.MonitorAReader = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.VitalSelectorAReader = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.MonitorAReader)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// MonitorAReader
 			// 
+			this.MonitorAReader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.MonitorAReader.BackColor = System.Drawing.SystemColors.Control;
 			this.MonitorAReader.BorderlineColor = System.Drawing.Color.Transparent;
 			chartArea1.Name = "vitalArea";
@@ -50,7 +54,7 @@ namespace Laps_Remote.Screens
 			this.MonitorAReader.Name = "MonitorAReader";
 			this.MonitorAReader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
 			series1.ChartArea = "vitalArea";
-			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+			series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
 			series1.Legend = "Legend1";
 			series1.Name = "Vital";
 			this.MonitorAReader.Series.Add(series1);
@@ -58,11 +62,27 @@ namespace Laps_Remote.Screens
 			this.MonitorAReader.TabIndex = 4;
 			this.MonitorAReader.Text = "vital";
 			// 
+			// VitalSelectorAReader
+			// 
+			this.VitalSelectorAReader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.VitalSelectorAReader.FormattingEnabled = true;
+			this.VitalSelectorAReader.Items.AddRange(new object[] {
+            "Heart Rate",
+            "Respiratory Rate",
+            "SPo2",
+            "Temperature"});
+			this.VitalSelectorAReader.Location = new System.Drawing.Point(66, 27);
+			this.VitalSelectorAReader.Name = "VitalSelectorAReader";
+			this.VitalSelectorAReader.Size = new System.Drawing.Size(121, 21);
+			this.VitalSelectorAReader.TabIndex = 10;
+			this.VitalSelectorAReader.SelectedIndexChanged += new System.EventHandler(this.VitalSelectorAReader_SelectedIndexChanged);
+			// 
 			// Reader
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.VitalSelectorAReader);
 			this.Controls.Add(this.MonitorAReader);
 			this.Name = "Reader";
 			this.Text = "Reader";
@@ -75,5 +95,6 @@ namespace Laps_Remote.Screens
 		#endregion
 
 		private System.Windows.Forms.DataVisualization.Charting.Chart MonitorAReader;
+		private System.Windows.Forms.ComboBox VitalSelectorAReader;
 	}
 }
