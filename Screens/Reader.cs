@@ -92,6 +92,13 @@ namespace Laps_Remote.Screens
 					MonitorAReader.Series["Vital"].Points.AddXY(TimeList[i], SpoList[i]);
 				}
 			}
+			else if(VitalSelectorAReader.SelectedIndex == 3)
+			{
+				for (int i = 0; i != TimeList.Count; i++)
+				{
+					MonitorAReader.Series["Vital"].Points.AddXY(TimeList[i], TempList[i]);
+				}
+			}
 		}
 	}
 }
