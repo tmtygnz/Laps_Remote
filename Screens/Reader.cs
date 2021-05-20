@@ -41,7 +41,12 @@ namespace Laps_Remote.Screens
 					Logger.log("Selected Invalid File", DateTime.Now, Level.Error);
 					MessageBox.Show("Please select a valid file");
 					this.Hide();
+					this.Close();
 				}
+			}
+			else
+			{
+				this.Close();
 			}
 		}
 

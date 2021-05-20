@@ -19,12 +19,16 @@ namespace Laps_Remote.Screens
 	public partial class Main : Form
 	{
 		bool recording = false;
+		int PointsRecorded = 0;
+		int SelectedIndexA = 0;
+		int SelectedIndexB = 0;
+
 		List<Dictionary<string, string>> TimeList = new List<Dictionary<string, string>>();
 		List<Dictionary<string, float>> TempList = new List<Dictionary<string, float>>();
 		List<Dictionary<string, int>> RespRateList = new List<Dictionary<string, int>>();
 		List<Dictionary<string, int>> SpoList = new List<Dictionary<string, int>>();
 		List<Dictionary<string, int>> HrList = new List<Dictionary<string, int>>();
-		int PointsRecorded = 0;
+		
 
 		public Main()
 		{
@@ -81,22 +85,22 @@ namespace Laps_Remote.Screens
 						Invoke((MethodInvoker) delegate
 						{
 							//Get value
-							if (VitalSelectorAMain.SelectedIndex == 0)
+							if (SelectedIndexA == 0)
 							{
 								MonitorAMain.Series["Vital"].Points.AddXY(Time, patientHr);
 							}
-							
-							else if (VitalSelectorAMain.SelectedIndex == 1)
+
+							else if (SelectedIndexA == 1)
 							{
 								MonitorAMain.Series["Vital"].Points.AddXY(Time, patienRespRate);
 							}
 
-							else if (VitalSelectorAMain.SelectedIndex == 2)
+							else if (SelectedIndexA == 2)
 							{
 								MonitorAMain.Series["Vital"].Points.AddXY(Time, patientSpo);
 							}
 
-							else if (VitalSelectorAMain.SelectedIndex == 3)
+							else if (SelectedIndexA == 3)
 							{
 								MonitorAMain.Series["Vital"].Points.AddXY(Time, patientTemp);
 							}
@@ -120,22 +124,22 @@ namespace Laps_Remote.Screens
 						Invoke((MethodInvoker)delegate 
 						{
 							//Get Value
-							if (VitalSelectorBMain.SelectedIndex == 0)
+							if (SelectedIndexB == 0)
 							{
 								MonitorBMain.Series["Vital"].Points.AddXY(Time, patientHr);
 							}
 
-							else if (VitalSelectorBMain.SelectedIndex == 1)
+							else if (SelectedIndexB == 1)
 							{
 								MonitorBMain.Series["Vital"].Points.AddXY(Time, patienRespRate);
 							}
 
-							else if (VitalSelectorBMain.SelectedIndex == 2)
+							else if (SelectedIndexB == 2)
 							{
 								MonitorBMain.Series["Vital"].Points.AddXY(Time, patientSpo);
 							}
 
-							else if(VitalSelectorBMain.SelectedIndex == 3)
+							else if(SelectedIndexB == 3)
 							{
 								MonitorBMain.Series["Vital"].Points.AddXY(Time, patientTemp);
 							}
@@ -224,12 +228,14 @@ namespace Laps_Remote.Screens
 		{
 			MonitorAMain.Series["Vital"].Points.Clear();
 			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
+			SelectedIndexA = VitalSelectorAMain.SelectedIndex;
 		}
 
 		private void VitalSelector_B_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			MonitorBMain.Series["Vital"].Points.Clear();
 			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
+			SelectedIndexB = VitalSelectorBMain.SelectedIndex;
 		}
 
 		private void ClearMonitor_Click(object sender, EventArgs e)
