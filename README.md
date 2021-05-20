@@ -14,5 +14,5 @@ To get started use `git clone https://github.com/jostimian/Laps_Remote` to clone
 
 ### TODO
 ---
-- History Reader [Currently Working On It 😀]
+- History Reader [😀 Done]
 - Audio and Video Feed
