@@ -1,0 +1,13 @@
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\bin\Release\Laps Remote.exe.config
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\bin\Release\Laps Remote.exe
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\bin\Release\Laps Remote.pdb
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\bin\Release\Newtonsoft.Json.dll
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps Remote.csprojAssemblyReference.cache
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps_Remote.Properties.Resources.resources
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps_Remote.Screens.Main.resources
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps_Remote.Screens.Reader.resources
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps Remote.csproj.GenerateResource.cache
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps Remote.csproj.CoreCompileInputs.cache
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps Remote.csproj.CopyComplete
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps Remote.exe
+C:\Users\josti\Desktop\Root\Personal\Projects\Laps\Laps Remote\Laps Remote\obj\Release\Laps Remote.pdb

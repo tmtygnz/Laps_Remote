@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
 using Laps_Remote.Utils;
+using System.Windows.Forms;
 
 
 namespace Laps_Remote.Logging
@@ -35,12 +36,12 @@ namespace Laps_Remote.Logging
 			logWriter = File.AppendText(logfilePath);
 			
 			//Start thread and add thread to dictionary
-			Thread logThread = new Thread(() => logLoop());
+			Thread logThread = new Thread(() => LogLoop());
 			Threads.addThread("logThread", logThread);
 			logThread.Start();
 		}
 
-		private static void logLoop()
+		private static void LogLoop()
 		{
 			while (true)
 				if (logQueue.Count != 0)
@@ -53,7 +54,7 @@ namespace Laps_Remote.Logging
 		/// <param name="logMessage">Message</param>
 		/// <param name="time">Time when the message is added</param>
 		/// <param name="level">The level or severity of the message</param>
-		public static void log(string logMessage, DateTime time, Level level)
+		public static void Log(string logMessage, DateTime time, Level level)
 		{
 			Message msg = new Message
 			{
@@ -62,6 +63,43 @@ namespace Laps_Remote.Logging
 				level = level
 			};
 			logQueue.Enqueue(msg);
+		}
+
+		/// <summary>
+		/// Log a message and show it to the use
+		/// </summary>
+		/// <param name="logMessage">Message</param>
+		/// <param name="time">Time when the message is added</param>
+		/// <param name="level">The level or severity of the message</param>
+		public static void MessageBoxLog(string logMessage, DateTime time, Level level)
+		{
+			Message msg = new Message
+			{
+				message = logMessage,
+				time = time,
+				level = level
+			};
+
+			logQueue.Enqueue(msg);
+
+			switch (level)
+			{
+				case Level.Fatal:
+					MessageBox.Show(logMessage, time.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					break;
+
+				case Level.Error:
+					MessageBox.Show(logMessage, time.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					break;
+
+				case Level.Warning:
+					MessageBox.Show(logMessage, time.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					break;
+
+				case Level.Trace:
+					MessageBox.Show(logMessage, time.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+					break;
+			}
 		}
 
 		/// <summary>

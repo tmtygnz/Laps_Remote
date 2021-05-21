@@ -29,7 +29,9 @@ namespace Laps_Remote.Screens
 		{
 			InitializeComponent();
 			
-			Logger.log("Reader Open", DateTime.Now, Level.Trace);
+			Logger.Log("Reader Open", DateTime.Now, Level.Trace);
+
+			VitalSelectorAReader.SelectedIndex = 0;
 
 			OpenFileDialog fileDialog = new OpenFileDialog();
 			if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -37,16 +39,13 @@ namespace Laps_Remote.Screens
 				filePath = fileDialog.FileName;
 				if (Path.GetExtension(filePath) != ".json")
 				{
-					MessageBox.Show(filePath);
-					Logger.log("Selected Invalid File", DateTime.Now, Level.Error);
-					MessageBox.Show("Please select a valid file");
-					this.Hide();
-					this.Close();
+					Logger.MessageBoxLog("Selected Invalid File", DateTime.Now, Level.Error);
+					this.Dispose();
 				}
 			}
 			else
 			{
-				this.Close();
+				this.Dispose();
 			}
 		}
 

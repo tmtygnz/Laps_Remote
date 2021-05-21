@@ -18,7 +18,7 @@ namespace Laps_Remote
 		{
 			Threads.init();
 			Logger.init();
-			Logger.log("Init", DateTime.UtcNow, Level.Trace);
+			Logger.Log("Init", DateTime.UtcNow, Level.Trace);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new Screens.Main());
