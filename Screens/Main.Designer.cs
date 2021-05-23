@@ -49,14 +49,13 @@ namespace Laps_Remote.Screens
 			this.vitalMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.vitalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.recordingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.StartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.readHIstoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.ClearMonitor_A = new System.Windows.Forms.Button();
+			this.ClearMonitorA = new System.Windows.Forms.Button();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.RecordingStatus = new System.Windows.Forms.ToolStripStatusLabel();
-			this.ClearMonitorHelp = new System.Windows.Forms.HelpProvider();
 			this.AutoScrollAMain = new System.Windows.Forms.CheckBox();
 			this.MonitorBMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
 			this.VitalSelectorBMain = new System.Windows.Forms.ComboBox();
@@ -81,7 +80,7 @@ namespace Laps_Remote.Screens
 			this.VitalSelectorAMain.Name = "VitalSelectorAMain";
 			this.VitalSelectorAMain.Size = new System.Drawing.Size(121, 23);
 			this.VitalSelectorAMain.TabIndex = 4;
-			this.VitalSelectorAMain.SelectedIndexChanged += new System.EventHandler(this.VitalSelector_SelectedIndexChanged);
+			this.VitalSelectorAMain.SelectedIndexChanged += new System.EventHandler(this.VitalSelectorAMain_SelectedIndexChanged);
 			// 
 			// MonitorAMain
 			// 
@@ -168,7 +167,7 @@ namespace Laps_Remote.Screens
 			// quitToolStripMenuItem
 			// 
 			this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-			this.quitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+			this.quitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.quitToolStripMenuItem.Text = "Quit";
 			// 
 			// preferencesToolStripMenuItem
@@ -176,7 +175,7 @@ namespace Laps_Remote.Screens
 			this.preferencesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vitalMonitorToolStripMenuItem});
 			this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-			this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+			this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.preferencesToolStripMenuItem.Text = "Preferences";
 			// 
 			// vitalMonitorToolStripMenuItem
@@ -198,31 +197,31 @@ namespace Laps_Remote.Screens
 			// recordingToolStripMenuItem
 			// 
 			this.recordingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.saveToolStripMenuItem});
+            this.StartToolStripMenuItem,
+            this.SaveToolStripMenuItem});
 			this.recordingToolStripMenuItem.Name = "recordingToolStripMenuItem";
-			this.recordingToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+			this.recordingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.recordingToolStripMenuItem.Text = "Recording";
 			// 
-			// startToolStripMenuItem
+			// StartToolStripMenuItem
 			// 
-			this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-			this.startToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-			this.startToolStripMenuItem.Text = "Start";
-			this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
+			this.StartToolStripMenuItem.Name = "StartToolStripMenuItem";
+			this.StartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.StartToolStripMenuItem.Text = "Start";
+			this.StartToolStripMenuItem.Click += new System.EventHandler(this.StartToolStripMenuItem_Click);
 			// 
-			// saveToolStripMenuItem
+			// SaveToolStripMenuItem
 			// 
-			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-			this.saveToolStripMenuItem.Text = "Stop and Save";
-			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+			this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
+			this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.SaveToolStripMenuItem.Text = "Stop and Save";
+			this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
 			// 
 			// readHIstoryToolStripMenuItem
 			// 
 			this.readHIstoryToolStripMenuItem.Name = "readHIstoryToolStripMenuItem";
-			this.readHIstoryToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-			this.readHIstoryToolStripMenuItem.Text = "Read HIstory";
+			this.readHIstoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.readHIstoryToolStripMenuItem.Text = "Read History";
 			this.readHIstoryToolStripMenuItem.Click += new System.EventHandler(this.readHIstoryToolStripMenuItem_Click);
 			// 
 			// comboBox1
@@ -239,16 +238,16 @@ namespace Laps_Remote.Screens
 			this.comboBox1.Size = new System.Drawing.Size(121, 21);
 			this.comboBox1.TabIndex = 4;
 			// 
-			// ClearMonitor_A
+			// ClearMonitorA
 			// 
-			this.ClearMonitor_A.Location = new System.Drawing.Point(138, 140);
-			this.ClearMonitor_A.Name = "ClearMonitor_A";
-			this.ClearMonitor_A.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.ClearMonitor_A.Size = new System.Drawing.Size(91, 23);
-			this.ClearMonitor_A.TabIndex = 5;
-			this.ClearMonitor_A.Text = "Clear Monitor";
-			this.ClearMonitor_A.UseVisualStyleBackColor = true;
-			this.ClearMonitor_A.Click += new System.EventHandler(this.ClearMonitor_Click);
+			this.ClearMonitorA.Location = new System.Drawing.Point(138, 140);
+			this.ClearMonitorA.Name = "ClearMonitorA";
+			this.ClearMonitorA.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.ClearMonitorA.Size = new System.Drawing.Size(91, 23);
+			this.ClearMonitorA.TabIndex = 5;
+			this.ClearMonitorA.Text = "Clear Monitor";
+			this.ClearMonitorA.UseVisualStyleBackColor = true;
+			this.ClearMonitorA.Click += new System.EventHandler(this.ClearMonitorA_Click);
 			// 
 			// statusStrip1
 			// 
@@ -314,7 +313,7 @@ namespace Laps_Remote.Screens
 			this.VitalSelectorBMain.Name = "VitalSelectorBMain";
 			this.VitalSelectorBMain.Size = new System.Drawing.Size(121, 23);
 			this.VitalSelectorBMain.TabIndex = 9;
-			this.VitalSelectorBMain.SelectedIndexChanged += new System.EventHandler(this.VitalSelector_B_SelectedIndexChanged);
+			this.VitalSelectorBMain.SelectedIndexChanged += new System.EventHandler(this.VitalSelectorBMain_SelectedIndexChanged);
 			// 
 			// ClearMonitorBMain
 			// 
@@ -325,7 +324,7 @@ namespace Laps_Remote.Screens
 			this.ClearMonitorBMain.TabIndex = 10;
 			this.ClearMonitorBMain.Text = "Clear Monitor";
 			this.ClearMonitorBMain.UseVisualStyleBackColor = true;
-			this.ClearMonitorBMain.Click += new System.EventHandler(this.ClearMonitor_B_Click);
+			this.ClearMonitorBMain.Click += new System.EventHandler(this.ClearMonitorBMain_Click);
 			// 
 			// AutoScrollBMain
 			// 
@@ -350,7 +349,7 @@ namespace Laps_Remote.Screens
 			this.Controls.Add(this.MonitorBMain);
 			this.Controls.Add(this.AutoScrollAMain);
 			this.Controls.Add(this.statusStrip1);
-			this.Controls.Add(this.ClearMonitor_A);
+			this.Controls.Add(this.ClearMonitorA);
 			this.Controls.Add(this.HeartRate);
 			this.Controls.Add(this.VitalSelectorAMain);
 			this.Controls.Add(this.Spo);
@@ -387,17 +386,16 @@ namespace Laps_Remote.Screens
 		private System.Windows.Forms.Label Temperature;
 		private System.Windows.Forms.ComboBox VitalSelectorAMain;
 		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.Button ClearMonitor_A;
+		private System.Windows.Forms.Button ClearMonitorA;
 		private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem vitalMonitorToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem vitalsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem recordingToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem StartToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel RecordingStatus;
-		private System.Windows.Forms.HelpProvider ClearMonitorHelp;
 		private System.Windows.Forms.CheckBox AutoScrollAMain;
 		private System.Windows.Forms.DataVisualization.Charting.Chart MonitorBMain;
 		private System.Windows.Forms.ComboBox VitalSelectorBMain;

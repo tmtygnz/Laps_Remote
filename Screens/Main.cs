@@ -52,7 +52,7 @@ namespace Laps_Remote.Screens
 			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
 			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Size = 111;
 
-			saveToolStripMenuItem.Enabled = false;
+			SaveToolStripMenuItem.Enabled = false;
 
 			Thread vitalLoopThread = new Thread(() => VitalLoop());
 			Threads.addThread("vitalLoopThread", vitalLoopThread);
@@ -224,61 +224,56 @@ namespace Laps_Remote.Screens
 			}
 		}
 
-		private void VitalSelector_SelectedIndexChanged(object sender, EventArgs e)
+		private void VitalSelectorAMain_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			MonitorAMain.Series["Vital"].Points.Clear();
 			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 			SelectedIndexA = VitalSelectorAMain.SelectedIndex;
 		}
 
-		private void VitalSelector_B_SelectedIndexChanged(object sender, EventArgs e)
+		private void VitalSelectorBMain_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			MonitorBMain.Series["Vital"].Points.Clear();
 			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 			SelectedIndexB = VitalSelectorBMain.SelectedIndex;
 		}
 
-		private void ClearMonitor_Click(object sender, EventArgs e)
+		private void ClearMonitorA_Click(object sender, EventArgs e)
 		{
 			MonitorAMain.Series["Vital"].Points.Clear();
 			MonitorAMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
-		private void ClearMonitor_B_Click(object sender, EventArgs e)
+		private void ClearMonitorBMain_Click(object sender, EventArgs e)
 		{
 			MonitorBMain.Series["Vital"].Points.Clear();
 			MonitorBMain.ChartAreas[0].AxisX.ScaleView.Position = 0;
 		}
 
-		private void SaveData_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show(MonitorAMain.Series["Vital"].Points.ToString());
-		}
-
-		private void startToolStripMenuItem_Click(object sender, EventArgs e)
+		private void StartToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Thread beep = new Thread(() => Console.Beep(1000, 100));
 			beep.Start();
 
 			recording = true;
 
-			saveToolStripMenuItem.Enabled = true;
-			startToolStripMenuItem.Enabled = false;
+			SaveToolStripMenuItem.Enabled = true;
+			StartToolStripMenuItem.Enabled = false;
 
 			RecordingStatus.ForeColor = Color.Red;
 		}
 
-		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+		private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			recording = false;
 
 			RecordingStatus.ForeColor = Color.ForestGreen;
 			RecordingStatus.Text = "Not Recording";
 
-			saveToolStripMenuItem.Enabled = false;
-			startToolStripMenuItem.Enabled = true;
+			SaveToolStripMenuItem.Enabled = false;
+			StartToolStripMenuItem.Enabled = true;
 
-			Save.History(TimeList,TempList,RespRateList,SpoList,HrList);
+			Save.History(TimeList, TempList, RespRateList, SpoList, HrList);
 
 			TimeList.Clear();
 			TempList.Clear();
@@ -286,7 +281,6 @@ namespace Laps_Remote.Screens
 			SpoList.Clear();
 			HrList.Clear();
 		}
-
 		private void readHIstoryToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Reader reader = new Reader();
