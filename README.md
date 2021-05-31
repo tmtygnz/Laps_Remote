@@ -1,4 +1,4 @@
-﻿﻿### Laps Remote [Under Development]
+﻿### Laps Remote [Under Development]
 ---
 <p align="center">
   <img width="300" height="300" src="./img/ico.ico">
