@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading;
 using Laps_Remote.Utils;
 using System.Windows.Forms;
-
+using Laps_Remote.Screens;
 
 namespace Laps_Remote.Logging
 {

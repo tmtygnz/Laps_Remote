@@ -29,6 +29,7 @@ namespace Laps_Remote.Screens
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
 			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
 			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -61,6 +62,7 @@ namespace Laps_Remote.Screens
 			this.VitalSelectorBMain = new System.Windows.Forms.ComboBox();
 			this.ClearMonitorBMain = new System.Windows.Forms.Button();
 			this.AutoScrollBMain = new System.Windows.Forms.CheckBox();
+			this.LoggerNotifIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.MonitorAMain)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
@@ -338,6 +340,10 @@ namespace Laps_Remote.Screens
 			this.AutoScrollBMain.Text = "AutoScroll";
 			this.AutoScrollBMain.UseVisualStyleBackColor = true;
 			// 
+			// LoggerNotifIcon
+			// 
+			this.LoggerNotifIcon.Visible = true;
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
@@ -402,5 +408,6 @@ namespace Laps_Remote.Screens
 		private System.Windows.Forms.Button ClearMonitorBMain;
 		private System.Windows.Forms.CheckBox AutoScrollBMain;
 		private System.Windows.Forms.ToolStripMenuItem readHIstoryToolStripMenuItem;
+		private System.Windows.Forms.NotifyIcon LoggerNotifIcon;
 	}
 }

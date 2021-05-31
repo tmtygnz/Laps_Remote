@@ -19,5 +19,4 @@ You can follow the Getting Started guide but you can also use the installer or t
 ### TODO
 ---
 - History Reader [😀 Done]
-- Migrate to UWP
 - Audio and Video Feed

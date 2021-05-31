@@ -72,7 +72,7 @@ namespace Laps_Remote.Screens
 				Thread.Sleep(100);
 				string Time = $"{DateTime.Now.Hour}:{DateTime.Now.Second}";
 
-				//All data here will be change in to a real one later
+				//The current data is completely
 				float patientTemp = Temp.getRandomTemperature();
 				int patienRespRate = Resp.getRandomResp();
 				int patientSpo = OSat.getRandomOsat();
