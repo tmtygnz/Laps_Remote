@@ -1,4 +1,4 @@
-﻿### Laps Remote [Under Development]
+﻿﻿### Laps Remote [Under Development]
 ---
 <p align="center">
   <img width="300" height="300" src="./img/ico.ico">
@@ -19,4 +19,5 @@ You can follow the Getting Started guide but you can also use the installer or t
 ### TODO
 ---
 - History Reader [😀 Done]
+- Migrate to Electron JS
 - Audio and Video Feed
