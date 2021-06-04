@@ -6,6 +6,9 @@
 
 This is a software used with LapsDR to create a contactless health checkup
 
+### **NOTE!**⬇️
+This Project Will Be Migrating To Avalonia UI
+
 ### Getting Started
 ---
 I recomend visual Studio 2019, i havent tested Laps Remote in other Text Editor or IDE's <br>

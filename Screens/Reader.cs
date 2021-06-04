@@ -60,14 +60,15 @@ namespace Laps_Remote.Screens
 			StreamReader reader = new StreamReader(filePath);
 			history = JsonConvert.DeserializeObject<dynamic>(reader.ReadToEnd());
 
-			//Load Values
-			for(int i = 0; i != history["Time"].Count; i++)
+			for (int i = 0; i != history["Time"].Count; i++)
 			{
+				// Load Values To List
 				TimeList.Add(history["Time"][i]["value"].ToString());
 				TempList.Add((float)history["Temp"][i]["value"]);
 				RespRateList.Add((int)history["RespRate"][i]["value"]);
 				SpoList.Add((int)history["Spo"][i]["value"]);
 				HrList.Add((int)history["Hr"][i]["value"]);
+				MonitorAReader.Series["Vital"].Points.AddXY(history["Time"][i]["value"].ToString(), (int)history["Hr"][i]["value"]);
 			}
 		}
 

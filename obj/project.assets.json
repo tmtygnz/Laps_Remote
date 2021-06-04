@@ -87,11 +87,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\Laps Remote.csproj",
+      "projectUniqueName": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps Remote\\Laps Remote\\Laps Remote.csproj",
       "projectName": "Laps Remote",
-      "projectPath": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\Laps Remote.csproj",
+      "projectPath": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps Remote\\Laps Remote\\Laps Remote.csproj",
       "packagesPath": "C:\\Users\\josti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps\\Laps Remote\\Laps Remote\\obj\\",
+      "outputPath": "C:\\Users\\josti\\Desktop\\Root\\Personal\\Projects\\Laps Remote\\Laps Remote\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
