@@ -6,7 +6,7 @@
 
 This is a software used with LapsDR to create a contactless health checkup
 
-### **NOTE!**⬇️
+### NOTE!⬇️
 This Project Will Be Migrating To Avalonia UI
 
 ### Getting Started
