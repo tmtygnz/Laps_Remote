@@ -7,7 +7,7 @@
 This is a software used with LapsDR to create a contactless health checkup
 
 ### NOTE!⬇️
-This Project Will Be Migrating To .Net MAUI 
+This Project Will Be Migrating To .Net MAUI Or WPF 
 
 ### Getting Started
 ---
