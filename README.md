@@ -7,7 +7,7 @@
 This is a software used with LapsDR to create a contactless health checkup
 
 ### NOTE!⬇️
-This Project Will Be Migrating To .Net MAUI Or WPF 
+This project is migrating to WPF [here](https://github.com/jostimian/LapsRemoteV2)
 
 ### Getting Started
 ---
